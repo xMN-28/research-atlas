@@ -1,0 +1,14 @@
+* text=auto
+*.py text eol=lf
+*.tsx text eol=lf
+*.ts text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+data/research_papers.csv -text
+*.joblib binary
+*.sqlite binary
+*.woff2 binary
+*.png binary

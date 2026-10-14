@@ -1,0 +1,112 @@
+{
+  "config": {
+    "years": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "target_per_year": 1250,
+    "candidate_sample": 1500,
+    "seed": 42,
+    "mode": "sample",
+    "subfield": "1702",
+    "types": [
+      "article",
+      "preprint"
+    ],
+    "version": 1
+  },
+  "completed_at": "2026-10-14T06:06:00.727088+00:00",
+  "raw_directory": "data/raw/2683a1f5dee8",
+  "years": {
+    "2018": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2018,type:article|preprint",
+      "corpus_count": 61635,
+      "count_retrieved_at": "2026-10-14T06:03:27.400242+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2060,
+      "selected": 1250,
+      "rejections": {
+        "missing_id_or_title": 1
+      },
+      "nominal_selected_fraction": 0.020280684675914658
+    },
+    "2019": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2019,type:article|preprint",
+      "corpus_count": 70325,
+      "count_retrieved_at": "2026-10-14T06:03:41.835457+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2061,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.017774617845716316
+    },
+    "2020": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2020,type:article|preprint",
+      "corpus_count": 79743,
+      "count_retrieved_at": "2026-10-14T06:03:55.609276+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2062,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.015675357084634387
+    },
+    "2021": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2021,type:article|preprint",
+      "corpus_count": 82320,
+      "count_retrieved_at": "2026-10-14T06:04:09.444365+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2063,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.015184645286686104
+    },
+    "2022": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2022,type:article|preprint",
+      "corpus_count": 78661,
+      "count_retrieved_at": "2026-10-14T06:04:23.401443+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2064,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.015890975197365913
+    },
+    "2023": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2023,type:article|preprint",
+      "corpus_count": 91495,
+      "count_retrieved_at": "2026-10-14T06:04:35.515553+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2065,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.013661948740368326
+    },
+    "2024": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2024,type:article|preprint",
+      "corpus_count": 112991,
+      "count_retrieved_at": "2026-10-14T06:04:50.364022+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2066,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.01106282801285058
+    },
+    "2025": {
+      "filter": "primary_topic.subfield.id:1702,publication_year:2025,type:article|preprint",
+      "corpus_count": 150851,
+      "count_retrieved_at": "2026-10-14T06:05:04.943512+00:00",
+      "candidates_downloaded": 1500,
+      "sample_seed": 2067,
+      "selected": 1250,
+      "rejections": {},
+      "nominal_selected_fraction": 0.008286322265016473
+    }
+  },
+  "csv_sha256": "5c15912ffe000ddf1417520f0f1049c8f858fc56c394aa5d29c51c5c49c22a7b",
+  "sampling_caveat": "Equal yearly quotas do not represent publication growth. Use corpus_count for volume trends. Missing text, primary-topic coverage and DOI deduplication can bias topic estimates. Cursor mode is a publication-date-ordered convenience subset, not a random corpus sample."
+}

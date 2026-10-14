@@ -1,0 +1,41 @@
+{
+  "total_papers": 10000,
+  "unique_papers": 10000,
+  "counts_by_year": {
+    "2018": 1250,
+    "2019": 1250,
+    "2020": 1250,
+    "2021": 1250,
+    "2022": 1250,
+    "2023": 1250,
+    "2024": 1250,
+    "2025": 1250
+  },
+  "missing_values": {
+    "paper_id": 0,
+    "title": 0,
+    "abstract": 2421,
+    "publication_year": 0,
+    "keywords": 25,
+    "research_topic": 0,
+    "doi": 1577,
+    "citation_count": 0,
+    "research_topic_id": 0,
+    "subfield_id": 0,
+    "work_type": 0,
+    "abstract_missing": 0,
+    "keywords_missing": 0
+  },
+  "missing_abstracts_by_year": {
+    "2018": 408,
+    "2019": 399,
+    "2020": 355,
+    "2021": 308,
+    "2022": 255,
+    "2023": 232,
+    "2024": 231,
+    "2025": 233
+  },
+  "validated_at": "2026-10-14T06:06:00.892111+00:00",
+  "csv_sha256": "5c15912ffe000ddf1417520f0f1049c8f858fc56c394aa5d29c51c5c49c22a7b"
+}

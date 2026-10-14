@@ -1,0 +1,38 @@
+{
+  "models": {
+    "nmf": {
+      "coherence_npmi": 0.3310894150474328,
+      "topic_diversity": 0.96,
+      "seed_stability_cosine": 0.9999999723850479,
+      "interpretability_proxy": 0.8400000000000001,
+      "heldout_documents": 1955,
+      "training_documents": 7818,
+      "evaluation_iterations": 31,
+      "heldout_rmse": 0.012555444861944822,
+      "fit_seconds": 3.6
+    },
+    "lda": {
+      "coherence_npmi": 0.13625334902725167,
+      "topic_diversity": 0.83,
+      "seed_stability_cosine": 0.7539188767668883,
+      "interpretability_proxy": 0.9400000000000001,
+      "heldout_documents": 1955,
+      "training_documents": 7818,
+      "evaluation_iterations": 12,
+      "heldout_perplexity": 3035.557381247982,
+      "fit_seconds": 46.84
+    }
+  },
+  "methodology": {
+    "preprocessing": "spaCy tokenizer, lowercase alphabetic tokens, English plus Spanish/Indonesian/Portuguese/French/German function-word stoplists and corpus boilerplate stopwords. All records retained; no language translation, lemmatization or silent abstract imputation. Language-specific content words can still form multilingual topics.",
+    "features": "Shared 1–2 gram vocabulary; min_df=12, max_df=0.65, max_features=6000. NMF: sublinear TF-IDF; LDA: raw counts.",
+    "coherence": "Mean document-level NPMI over all 45 pairs of top 10 terms per topic, measured on held-out 20% documents. Unseen pairs score -1. Higher is better; range [-1,1]. Vocabulary is corpus-wide, so this is descriptive held-out topic evaluation rather than a leakage-free prediction benchmark.",
+    "diversity": "Distinct top-10 terms / (10 × topic count), evaluated on training-fit topics.",
+    "stability": "Two seeds (42 and 73) on the same 80% training subset, optimally matched by Hungarian assignment of cosine similarity. Seed stability only, not bootstrap robustness.",
+    "interpretability": "Lexical distinctiveness proxy: mean fraction of distinct leading words in top 10 terms. Not human-rated interpretability. Inspect labels and representative papers for qualitative assessment.",
+    "trends": "Mean normalized topic weight per year, using titles plus available abstracts. Shaded 95% normal intervals reflect sample variability, not model uncertainty. Abstract-only sensitivity also reported. Full-corpus counts are separate unsampled OpenAlex metadata; no volume extrapolation from equal quotas.",
+    "gaps": "NMF normalized memberships >=0.15 in abstract-bearing records; both margins >=100; observed below independence baseline. Score = deficit × balanced margins × log(1+smaller margin)/log(1+eligible corpus) × sqrt(cosine topic-term affinity). Similarity is a thematic relevance proxy, not proof of a meaningful intersection. Normalized mixtures impose compositional dependence, so the independence baseline is not a statistical significance test. Threshold and title-only sensitivities are saved. No validated novelty claim."
+  },
+  "generated_at": "2026-10-14T07:02:23.546324+00:00",
+  "dataset_sha256": "5c15912ffe000ddf1417520f0f1049c8f858fc56c394aa5d29c51c5c49c22a7b"
+}

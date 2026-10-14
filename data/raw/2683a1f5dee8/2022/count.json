@@ -1,0 +1,55 @@
+{
+  "retrieved_at": "2026-10-14T06:04:23.401443+00:00",
+  "parameters": {
+    "filter": "primary_topic.subfield.id:1702,publication_year:2022,type:article|preprint",
+    "per_page": 1,
+    "select": "id"
+  },
+  "response": {
+    "meta": {
+      "count": 78661,
+      "db_response_time_ms": 25,
+      "page": 1,
+      "per_page": 1,
+      "groups_count": null,
+      "x_query": {
+        "oql": "get works where subfield is [Artificial Intelligence](1702)\n  and published in 2022\n  and type is ([article](article) or [preprint](preprint))",
+        "x_new_oql": "get works from 2022 in the subfield [Artificial Intelligence](1702) where type is ([article](article) or [preprint](preprint))",
+        "oqo": {
+          "get_rows": "works",
+          "filter_rows": [
+            {
+              "column_id": "primary_topic.subfield.id",
+              "value": "1702"
+            },
+            {
+              "column_id": "publication_year",
+              "value": 2022
+            },
+            {
+              "join": "or",
+              "filters": [
+                {
+                  "column_id": "type",
+                  "value": "article"
+                },
+                {
+                  "column_id": "type",
+                  "value": "preprint"
+                }
+              ]
+            }
+          ]
+        },
+        "url": "/works?filter=primary_topic.subfield.id:1702,publication_year:2022,type:article|preprint&per_page=1"
+      },
+      "cost_usd": 0.0001
+    },
+    "results": [
+      {
+        "id": "https://openalex.org/W4293212596"
+      }
+    ],
+    "group_by": []
+  }
+}
