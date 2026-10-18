@@ -4,11 +4,9 @@ A local research intelligence platform for **scientific literature mining and re
 
 Built with **Next.js · TypeScript · Tailwind CSS · FastAPI · scikit-learn · spaCy · NetworkX · Plotly · Cytoscape · SQLite**. Runs on Windows without paid services, external LLMs, or Google Colab. Models and data are bundled; browsing does not trigger training or API downloads.
 
-![Research Atlas overview: corpus volume, learned topics and evidence-backed hypotheses](docs/screenshots/dashboard.png)
-
 **10,000 papers · 8 years · 10 topics per model · 36 review hypotheses**
 
-[Getting started](#launch-on-this-machine) · [Screenshots](#explore-the-platform) · [Evaluation](#actual-evaluation) · [Methodology](#dataset-and-analysis-methodology) · [Tests](#tests-and-development) · [Walkthrough](docs/DEMONSTRATION.md)
+[Getting started](#launch-on-this-machine) · [Platform](#explore-the-platform) · [Evaluation](#actual-evaluation) · [Methodology](#dataset-and-analysis-methodology) · [Tests](#tests-and-development) · [Walkthrough](docs/DEMONSTRATION.md)
 
 ## From literature to research questions
 
@@ -49,16 +47,10 @@ Evaluation measures coherence, diversity and initialization stability; interpret
 
 Search titles, abstracts and keywords. Filter by publication year, learned topic, model and text coverage; sort by relevance, citations or recency. Original OpenAlex and DOI references remain attached to every record.
 
-![Literature explorer with full-text search, filters and paper records](docs/screenshots/literature-explorer.png)
-
 <details>
 <summary>Paper details and explicit missing-abstract handling</summary>
 
 The centered, keyboard-accessible paper dialog shows original metadata and source links. Title-only records explain why no abstract is displayed; missing text is never invented.
-
-![Centered paper-details dialog with original abstract and links](docs/screenshots/paper-details.png)
-
-![Title-only paper showing explicit missing-abstract explanation](docs/screenshots/paper-title-only.png)
 
 </details>
 
@@ -66,49 +58,21 @@ The centered, keyboard-accessible paper dialog shows original metadata and sourc
 
 Switch between models, inspect their learned vocabulary, and read the papers behind a topic. Labels are generated from model outputs rather than manually authored results.
 
-![NMF topic discovery with component words and representative literature](docs/screenshots/topics-nmf.png)
-
-<details>
-<summary>Compare the LDA topic view</summary>
-
-![LDA topic discovery using probabilistic count-based mixtures](docs/screenshots/topics-lda.png)
-
-</details>
-
 ### Research trends
 
 Explore topic prevalence by model, theme and year range. The abstract-only view makes text-coverage sensitivity visible; corpus-volume charts remain distinct from equal-year sample prevalence.
-
-![Research trends with topic prevalence and separate corpus volume](docs/screenshots/research-trends.png)
 
 ### Concept network
 
 Drag and zoom the relationship graph, change the shared-paper threshold, and select a term to inspect frequencies, connected concepts and actual supporting literature.
 
-![Interactive concept co-occurrence graph and source-paper evidence](docs/screenshots/concept-network.png)
-
 ### Research-gap explorer
 
 Ranked candidates expose the observed intersection, independence baseline, term affinity and score formula. Existing intersection papers are shown as counter-evidence alongside separate-theme literature. Every candidate remains a **review hypothesis**.
 
-![Ranked research hypotheses with transparent scoring and existing-literature evidence](docs/screenshots/research-gaps.png)
-
 ### Model evaluation
 
 Inspect real held-out metrics, compare the models, expand methodology notes and export the evaluation JSON. Model-specific errors are separated to avoid misleading comparisons.
-
-![Model evaluation with real LDA and NMF measurements](docs/screenshots/model-evaluation.png)
-
-<details>
-<summary>Dark appearance and responsive mobile layout</summary>
-
-![Model evaluation in dark mode](docs/screenshots/dark-evaluation.png)
-
-<img src="docs/screenshots/mobile-dashboard.png" alt="Research Atlas responsive mobile overview" width="390" />
-
-</details>
-
-Screenshots show the running application and actual saved analysis outputs. Regenerate them with `node scripts/capture-screenshots.mjs` from `frontend/` while both services are running.
 
 ## Launch on this machine
 
