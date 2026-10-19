@@ -14,3 +14,11 @@ frontend/*.tsbuildinfo
 artifacts/*.tmp.sqlite
 *.tmp
 verification/*.png
+
+# Personal local project explanation; do not publish.
+/PROJECT_EXPLANATION.md
+.vercel/
+backend/runtime-data/
+/reports/
+
+.vercel

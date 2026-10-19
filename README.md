@@ -1,5 +1,7 @@
 # Research Atlas
 
+**Live application:** [research-atlas-rho.vercel.app](https://research-atlas-rho.vercel.app)
+
 A local research intelligence platform for **scientific literature mining and research-gap discovery**. Explore 10,000 real AI research papers, compare learned topics, follow their evolution, inspect concept relationships, and investigate evidence-backed research hypotheses.
 
 Built with **Next.js · TypeScript · Tailwind CSS · FastAPI · scikit-learn · spaCy · NetworkX · Plotly · Cytoscape · SQLite**. Runs on Windows without paid services, external LLMs, or Google Colab. Models and data are bundled; browsing does not trigger training or API downloads.
@@ -9,6 +11,26 @@ Built with **Next.js · TypeScript · Tailwind CSS · FastAPI · scikit-learn ·
 [Getting started](#launch-on-this-machine) · [Platform](#explore-the-platform) · [Evaluation](#actual-evaluation) · [Methodology](#dataset-and-analysis-methodology) · [Tests](#tests-and-development) · [Walkthrough](docs/DEMONSTRATION.md)
 
 ## From literature to research questions
+
+### Vercel deployment
+
+The root `vercel.json` deploys Next.js and FastAPI together using Vercel Services (beta). `/api/*` routes to Python; all other routes go to the frontend. The backend uses a read-only bundled SQLite corpus and saved JSON analysis. No OpenAlex key or training dependencies are required in production.
+
+From the project root, with Vercel CLI installed and signed in:
+
+```powershell
+vercel deploy --prod --archive=tgz
+```
+
+`backend/prepare_runtime.py` copies the two saved runtime artifacts during the cloud build. `.vercelignore` excludes secrets, raw collection files, trained model binaries, local reports and the private project explanation. Local Windows startup continues to use the localhost API proxy. To run the browser checks against production:
+
+```powershell
+cd frontend
+$env:TEST_BASE_URL = 'https://research-atlas-rho.vercel.app'
+npx playwright test
+```
+
+The hosted dataset contains **7,579 papers with abstracts (75.79%)** and **2,421 title-only records (24.21%)**. Updating the hosted corpus requires retraining locally and redeploying the resulting artifacts; requests never train models or write to the packaged database.
 
 The pipeline keeps each inference connected to the original literature:
 

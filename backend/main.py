@@ -11,6 +11,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 ROOT = Path(__file__).resolve().parents[1]
 ART = ROOT / 'artifacts'
+if (Path(__file__).resolve().parent / 'runtime-data').exists():
+    ART = Path(__file__).resolve().parent / 'runtime-data'
 app = FastAPI(title='CEP 2 · Research Atlas', version='1.0.0')
 app.add_middleware(CORSMiddleware, allow_origins=['http://localhost:3000', 'http://127.0.0.1:3000'],
                    allow_methods=['GET'], allow_headers=['*'])
